@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Miss You, Chittilu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fdf1f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff8fab;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .scene {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background-color: #ffe5ec;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 40px;
+      overflow: hidden;
+    }
+    .girl, .boy {
+      position: absolute;
+      transition: all 1s ease;
+    }
+    .girl {
+      height: 200px;
+      bottom: 40px;
+      left: 80px;
+    }
+    .boy {
+      height: 240px;
+      bottom: 40px;
+      right: 80px;
+    }
+    .happy {
+      filter: hue-rotate(40deg) saturate(1.2);
+    }
+    .kiss {
+      animation: kiss 1s forwards;
+    }
+    @keyframes kiss {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-20px); }
+      100% { transform: translateX(0); }
+    }
+    button {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      padding: 10px 20px;
+      background-color: #ffc9de;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background-color: #ffb3cd;
+    }
+  </style>
+</head>
+<body>
+  <h1>I miss you, Chittilu 🥺</h1>
+  <div class="scene">
+    <img src="https://i.imgur.com/A07M0Eo.png" alt="Girl Sad" class="girl" id="girl">
+    <img src="https://i.imgur.com/8aR7iZw.png" alt="Boy" class="boy" id="boy">
+    <button onclick="kissBack()">Kiss Back 💋</button>
+  </div>
+  <script>
+    function kissBack() {
+      const girl = document.getElementById('girl');
+      const boy = document.getElementById('boy');
+      boy.classList.add('kiss');
+      setTimeout(() => {
+        girl.classList.add('happy');
+      }, 1000);
+      setTimeout(() => {
+        boy.classList.remove('kiss');
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
